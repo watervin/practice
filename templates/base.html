@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>pybo!</title>
+    {%load static%}
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="jumbotron mb-0">
+      <h1>pybo를 통한 django 학습</h1>
+      <p>django와 bootstrap을 이용한 사이트 구축 학습</p>
+    </div>
+    <div class="my-3">
+    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+    {% block content %}{% endblock %}
+    <!-- 기본 템플릿 안에 삽입될 내용 End -->
+    <footer class = "mt-5 p-3 bg-light">Copyright &copy created by subin . All right reserved</footer>
+  </body>
+</html>
