@@ -17,14 +17,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
   </head>
   <body>
-    <div class="jumbotron mb-0">
-      <h1>pybo를 통한 django 학습</h1>
-      <p>django와 bootstrap을 이용한 사이트 구축 학습</p>
+    <div class="container">
+      <div class="jumbotron mb-0">
+        <h1>pybo를 통한 django 학습</h1>
+        <p>django와 bootstrap을 이용한 사이트 구축 학습</p>
+      </div>
+      <div class="my-3">{% block content %}{% endblock %}</div>
+      <footer class="mt-5 p-3 bg-light"><em>copyright© </em>created by eunseo. All right Reserved</footer>
     </div>
-    <div class="my-3">
-    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
-    {% block content %}{% endblock %}
-    <!-- 기본 템플릿 안에 삽입될 내용 End -->
-    <footer class = "mt-5 p-3 bg-light">Copyright &copy created by subin . All right reserved</footer>
   </body>
 </html>

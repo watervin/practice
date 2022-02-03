@@ -10,9 +10,9 @@
   <table class="table">
     <thead>
       <tr class="thead-dark">
-        <th style="width : 60px">번호</th>
+        <th style="width:60px">번호</th>
         <th>제목</th>
-        <th style="width : 250px">작성일시</th>
+        <th style="width.250px">작성일시</th>
       </tr>
     </thead>
     <tbody>
@@ -35,10 +35,10 @@
 </div>
 
 </table>
-<div class="clearfix">
 <div class="float-left">
-<a href="#" class = "btn btn-primary"><i class="fas fa-share-square"></i>질문 등록하기</a>    
+    <a href="{% url 'pybo:question_create'%}" class="btn btn-primary"><i class="fas fa-share-square"></i>질문 등록하기</a>    
 </div>
-<div class="text-right float-right">(총 : {{total_count}}건)</div>
+<div class="text-right float-right">(총: {{total_count}}건)
+
 </div>
-{% endblock content%}
+{% endblock content %}
