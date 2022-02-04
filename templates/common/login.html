@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-form container my-3 border-rounded shadow-sm">
+    <form method="post" class="post-form" action="{% url 'common:login' %}">
+        {% csrf_token %}
+        {% include "error/form_error.html" %}
+        <h3> <i class="fas fa-sign-in-alt"></i> 로그인 </h3>
+        <p></p>
+
+        <div class="form-group">
+            <label for="username"><i class="fas fa-user"></i> 사용자ID</label>
+            <input type="text" class="form-control" name="username" 
+            id="username" value="{{ form.username.value|default_if_none:'' }}"
+            placeholder="사용자 ID를 입력해주세요"
+            >
+        </div>
+        <div class="form-group">
+            <label for="password"><i class="fas fa-key"></i> 비밀번호</label>
+            <input type="password" class="form-control" name="password" 
+            id="password" value="{{ form.password.value|default_if_none:'' }}"
+            placeholder="비밀번호를 입력해주세요"
+           >
+        </div>
+        <button type="submit" class="btn btn-primary"> <i class="fas fa-sign-in-alt"></i> 로그인</button>
+        <a href="{% url 'common:signup' %}" class="btn btn-primary"> <i class="fas fa-user-plus mr-2"></i>회원가입</a>
+   
+</div>
+{% endblock %}

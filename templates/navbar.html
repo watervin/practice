@@ -1,21 +1,43 @@
+{% load static %}
+{%static "" as baseUrl %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-  <a class="navbar-brand" href="{% url 'pybo:index' %}"><i class="fas fa-home"></i>Pybo</a>
-  <button
-    class="navbar-toggler ml-auto"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+    <a class="navbar-brand" href="{% url 'pybo:index' %}"><i class="fas fa-home"></i> Pybo</a>
+    <button 
+        class="navbar-toggler ml-auto" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarNav"
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+
     <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-liFnk" href="#"><i class="fas fa-sign-in-alt"></i>로그인</a>
-      </li>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item ">
+            
+            <a class="nav-link " href="#" >
+            
+                <img src = "{{baseUrl}}images/avatas/{{user.username}}.jpg" class="avata-sm rounded-circle"/> 
+                {{ user.username }} 
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="{% url 'common:logout' %}" >
+                <i class = "fas fa-sign-out-alt"></i>로그아웃</a>
+              </li>
+          {% else %}
+            <li class="nav-item ">
+            <a class="nav-link" href="{% url 'common:login' %}" ><i class="fas fa-sign-in-alt"></i> 로그인</a>
+           
+        </li>
+          <li class="nav-item ">
+            <a href="{% url 'common:signup' %}"class="nav-link" ><i class="fas fa-user-plus"></i> 회원가입</a>
+        </li>
+        {% endif %}
     </ul>
-  </div>
+    </div>
 </nav>
