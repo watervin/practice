@@ -21,7 +21,7 @@
           <span class="badge badge-pill badge-primary">{{question.answer_set.count}}</span> {% endif %}       
         </td>
         
-        <td>{{ question.create_date }}</td>
+        <td>{{ question.create_date | date:'Y-m-d' }}</td>
       </tr>
        
       
