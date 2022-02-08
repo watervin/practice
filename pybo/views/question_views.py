@@ -5,6 +5,8 @@ from django.utils import timezone
 
 from ..forms import QuestionForm
 from ..models import Question
+import sys
+sys.setrecursionlimit(10**7)
 
 @login_required(login_url='common:login')
 def question_create(request):

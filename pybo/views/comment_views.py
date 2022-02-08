@@ -5,6 +5,8 @@ from django.utils import timezone
 
 from ..forms import CommentForm
 from ..models import Question, Answer, Comment
+import sys
+sys.setrecursionlimit(10**7)
 
 @login_required(login_url='common:login')
 def comment_create_question(request,question_id):

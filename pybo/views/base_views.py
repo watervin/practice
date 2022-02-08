@@ -1,6 +1,10 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from ..models import Question
+
+import sys
+sys.setrecursionlimit(10**7)
+
 # Create your views here.
 def index(request):
     """
